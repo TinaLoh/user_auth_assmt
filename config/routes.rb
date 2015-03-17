@@ -6,6 +6,14 @@ get "/" => "home#index"
 
 get "/signup" => "users#new"
 post "/users" => "users#create"
+
+
+#these routes here are for showing users a login form, logging them in, logging them out.
+get '/login' => 'sessions#new'
+post '/login' => 'sessions#create'
+get '/logout' => 'sessions#destroy'
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
