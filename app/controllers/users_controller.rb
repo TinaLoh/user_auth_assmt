@@ -7,8 +7,10 @@ class UsersController < ApplicationController
       user = User.new(user_params)
       if user.save
         session[:user_id] = user.id
+        flash[:notice] = "Your account is successfully created!"
         redirect_to '/'
       else
+        flash[:notice] = "There was a problem creating your account.  Please try again!"
         redirect_to '/signup'
       end
     end
